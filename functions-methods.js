@@ -1,7 +1,6 @@
 // Je gaat functies schrijven die we kunnen hergebruiken om sommige emailadressen te checken. Nu zul je gaan merken hoe handig functies kunnen zijn!
 // Je zult hier methoden van het String Object voor nodig hebben, dus pak de paragraaf op EdHub over het String Object er even bij.
 
-
 /* Opdracht  1 */
 // Schrijf een functie genaamd getEmailDomain, die een emailadres verwacht en de domeinnaam teruggeeft. Een domeinnaam is hetgeen dat na het @ in het adres staat
 // ---- Verwachte uitkomsten:
@@ -9,8 +8,12 @@
 // getEmailDomain("t.mellink@novi.nl") geeft novi.nl
 // getEmailDomain("a.wiersma@outlook.com") geeft outlook.com
 
-
-
+function getEmailDomain(emailAdres){
+    const indexOfAap= emailAdres.indexOf("@");
+    const domain = emailAdres.substring(indexOfAap + 1);
+    return domain;
+}
+console.log(getEmailDomain("n.eeken@novi-education.nl"))
 
 /* Opdracht  2 */
 // Schrijf een functie genaamd typeOfEmail, die een emailadres verwacht. De functie checkt of het emailadres een novi domein heeft (medewerker), een novi-education domein (student), of extern domein (zoals gmail of outlook)
@@ -20,6 +23,20 @@
 // typeOfEmail("novi.nlaapjesk@outlook.com") geeft geeft "Extern" <-- deze moet het ook doen!
 // typeOfEmail("a.wiersma@outlook.com") geeft "Extern"
 
+function typeOfEmail(emailAdresType){
+    const indexOfAapje= emailAdresType.indexOf("@");
+    const domainType = emailAdresType.substring(indexOfAapje + 1);
+    switch(emailAdresType) {
+        case "novi-education.nl":
+            console.log("Student");
+        case "novi.nl":
+            console.log("Medewerker");
+        case "outlook.com":
+            console.log("Extern");
+    }
+    return emailAdresType;
+}
+console.log(typeOfEmail("n.eeken@novi-education.nl"))
 
 
 /* Opdracht  3 */
@@ -34,3 +51,9 @@
 // checkEmailValidity("n.eekenanovi.nl") geeft false - want geen @
 // checkEmailValidity("n.eeken@novinl.") geeft false - want de punt mag niet als laatst
 // checkEmailValidity("tessmellink@novi,nl") geeft false - want er staat een komma in
+
+
+function checkEmailValidity(){
+deze kom ik niet uit :)
+
+}
